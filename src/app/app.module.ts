@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
+import { StoreModule } from '@ngrx/store';
 import { BrowserModule } from '@angular/platform-browser';
+import { simpleReducer } from './simple.reducer';
+import { myReducer } from './myReducer';
 
 import { AppComponent } from './app.component';
+import { MycompComponent } from './mycomp/mycomp.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent, MycompComponent],
   imports: [
-    BrowserModule
+    BrowserModule,
+    StoreModule.forRoot({ message: simpleReducer, mine: myReducer }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

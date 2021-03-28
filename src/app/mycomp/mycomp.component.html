@@ -1,0 +1,10 @@
+<div>
+  {{ (mine | async).title }}
+  <br />
+  {{ (mine | async).name }}
+  <br />
+  {{ (mine | async).number }}
+  <button (click)="numberAction()">Number action</button>
+  <button (click)="titleAction()">Title action</button>
+  <button (click)="nameAction()">Name action</button>
+</div>
