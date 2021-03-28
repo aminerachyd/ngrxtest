@@ -11,6 +11,7 @@ import { MycompComponent } from './mycomp/mycomp.component';
   declarations: [AppComponent, MycompComponent],
   imports: [
     BrowserModule,
+    // Le store global, contrairement à React il faut définir à chaque fois une nouvelle partie de state ici
     StoreModule.forRoot({ message: simpleReducer, mine: myReducer }),
   ],
   providers: [],

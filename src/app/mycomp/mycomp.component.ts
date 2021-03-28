@@ -8,8 +8,10 @@ interface Mine {
   number: number;
 }
 
+// On injecte le store dans le constructeur
+// On choisit les states à récupérer depuis le store avec cette interface
 interface AppState {
-  message: string;
+  // message: string;
   mine: Mine;
 }
 
@@ -25,12 +27,15 @@ export class MycompComponent implements OnInit {
     this.mine = this.store.select('mine');
   }
 
+  // Actions à dispatcher
   nameAction() {
     this.store.dispatch({ type: 'CHANGE_NAME' });
   }
+
   titleAction() {
     this.store.dispatch({ type: 'CHANGE_TITLE' });
   }
+
   numberAction() {
     this.store.dispatch({ type: 'CHANGE_NUMBER' });
   }
